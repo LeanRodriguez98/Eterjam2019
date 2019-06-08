@@ -15,15 +15,32 @@ public class Player : MonoBehaviour {
     [System.Serializable]
     public struct Controls
     {
-        public KeyCode leftKey;
-        public KeyCode rightKey;
+        public string horizontalAxis;
         public KeyCode jump;
+        public KeyCode shoot;
+    }
+
+    [System.Serializable]
+    public struct JoysticsControls
+    {
+        public string horizontalAxis;
+        public string jumpButton;
+        public string shootButton;
+    }
+
+    public enum FacingDirection
+    {
+        Left,
+        Right
     }
 
     public Controls controls;
+    public JoysticsControls joysticsControls;
     public Stats stats;
+    public GameObject bullet;
     private Rigidbody2D rigidbody2d;
     private bool canJump = true;
+    private FacingDirection facingDirection = FacingDirection.Right;
 	void Start ()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -37,24 +54,26 @@ public class Player : MonoBehaviour {
 
     public void Movements()
     {
-        if (Input.GetKey(controls.leftKey))
+        if (Input.GetAxis(controls.horizontalAxis) != 0 || Input.GetAxis(joysticsControls.horizontalAxis) != 0)
         {
+            gameObject.transform.position += Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * stats.speedMovement;
 
-            gameObject.transform.position += new Vector3(-stats.speedMovement * Time.deltaTime, 0, 0);
+            if (Input.GetAxis(controls.horizontalAxis) < 0 || Input.GetAxis(joysticsControls.horizontalAxis) < 0)
+            {
+                facingDirection = FacingDirection.Left;
+            }
+            else
+            {
+                facingDirection = FacingDirection.Right;
+            }
         }
 
-        if (Input.GetKey(controls.rightKey))
-        {
-            gameObject.transform.position += new Vector3(stats.speedMovement * Time.deltaTime, 0, 0);
-        }
-
-        if (Input.GetKeyDown(controls.jump) && canJump)
+        if ((Input.GetKeyDown(controls.jump) || Input.GetButtonDown(joysticsControls.jumpButton)) && canJump)
         {
             rigidbody2d.AddForce(Vector3.up * stats.jumpSpeed);
             canJump = false;
             Invoke("CanJumpReseter", stats.jumpCoulDown);
         }
-      
     }
 
     public void CanJumpReseter()
@@ -64,7 +83,18 @@ public class Player : MonoBehaviour {
 
     public void Shoot()
     {
-
+        if (Input.GetKeyDown(controls.shoot) || Input.GetButtonDown(joysticsControls.shootButton))
+        {
+            GameObject bulletAux = Instantiate(bullet, transform.position, transform.rotation);
+            if (facingDirection == FacingDirection.Left)
+            {
+                bulletAux.GetComponent<Bullet>().direction = Bullet.Direction.Left;
+            }
+            else if(facingDirection == FacingDirection.Right)
+            {
+                bulletAux.GetComponent<Bullet>().direction = Bullet.Direction.Right;
+            }
+        }
     }
 
 }

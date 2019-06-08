@@ -113,48 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &248712144
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479984332765068, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 97c2d82a40747dd41aeedf8798c79c46, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &273116588 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1154561411581324, guid: d263879fb831a594da35d617ec419071,
@@ -348,6 +306,37 @@ Prefab:
         type: 2}
       propertyPath: stats.jumpCoulDown
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1983625903288350, guid: 97c2d82a40747dd41aeedf8798c79c46,
+        type: 2}
+    - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: controls.shoot
+      value: 305
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: joysticsControls.horizontalAxis
+      value: Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: joysticsControls.jumpButton
+      value: Button 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: controls.horizontalAxis
+      value: Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: joysticsControls.shootButton
+      value: Button 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d263879fb831a594da35d617ec419071, type: 2}
