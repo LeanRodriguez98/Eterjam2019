@@ -6,29 +6,33 @@ public class Player : MonoBehaviour {
     [System.Serializable]
     public struct Stats
     {
+        public int life;
         public int speedMovement;
+        public int jumpSpeed;
+        public float jumpCoulDown;
     }
 
     [System.Serializable]
     public struct Controls
     {
-        public KeyCode upKey;
-        public KeyCode downKey;
         public KeyCode leftKey;
         public KeyCode rightKey;
+        public KeyCode jump;
     }
 
     public Controls controls;
     public Stats stats;
-
+    private Rigidbody2D rigidbody2d;
+    private bool canJump = true;
 	void Start ()
     {
-		
+        rigidbody2d = GetComponent<Rigidbody2D>();
 	}
 	
 	void Update ()
     {
         Movements();
+        Shoot();
 	}
 
     public void Movements()
@@ -44,15 +48,23 @@ public class Player : MonoBehaviour {
             gameObject.transform.position += new Vector3(stats.speedMovement * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey(controls.upKey))
+        if (Input.GetKeyDown(controls.jump) && canJump)
         {
-            gameObject.transform.position += new Vector3(0, stats.speedMovement * Time.deltaTime, 0);
+            rigidbody2d.AddForce(Vector3.up * stats.jumpSpeed);
+            canJump = false;
+            Invoke("CanJumpReseter", stats.jumpCoulDown);
         }
+      
+    }
 
-        if (Input.GetKey(controls.downKey))
-        {
-            gameObject.transform.position += new Vector3(0, -stats.speedMovement * Time.deltaTime, 0);
-        }
+    public void CanJumpReseter()
+    {
+        canJump = true;
+    }
+
+    public void Shoot()
+    {
+
     }
 
 }
