@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetKey(controls.leftKey))
         {
+
             gameObject.transform.position += new Vector3(-stats.speedMovement * Time.deltaTime, 0, 0);
         }
 
