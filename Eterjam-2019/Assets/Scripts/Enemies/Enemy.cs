@@ -9,27 +9,34 @@ public class Enemy : MonoBehaviour {
     {
         public int life;
         public int damageResistance;
-        public int speedMovement;
+        public float speedMovement;
     }
 
     public Stats stats;
 
-    public void Start()
+    protected Player playerReference;
+
+    public virtual void Start()
     {
         if (stats.damageResistance < 0)
         {
             stats.damageResistance = 0;
             Debug.LogWarning(gameObject.name + " Error. Damage resistance can't be less at 0");
         }
+
+        playerReference = Player.playerInstance;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (stats.life < 0)
         {
             Destroy(gameObject);
         }
     }
+
+    public virtual void Atack(){ }
+
     public void SetDamage(int damage)
     {
         stats.life -= (damage - stats.damageResistance);

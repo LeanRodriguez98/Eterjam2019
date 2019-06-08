@@ -9,7 +9,8 @@ public class Player : MonoBehaviour {
         public int life;
         public int speedMovement;
         public int jumpSpeed;
-        public float jumpCoulDown;
+        public float jumpCoolDown;
+        public int damageResistance;
     }
 
     [System.Serializable]
@@ -38,18 +39,38 @@ public class Player : MonoBehaviour {
     public JoysticsControls joysticsControls;
     public Stats stats;
     public GameObject bullet;
+
+
+    public static Player playerInstance;
+
+
     private Rigidbody2D rigidbody2d;
     private bool canJump = true;
     private FacingDirection facingDirection = FacingDirection.Right;
-	void Start ()
+
+    private void Awake()
+    {
+        playerInstance = this;
+    }
+    void Start ()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-	}
+
+        if (stats.damageResistance < 0)
+        {
+            stats.damageResistance = 0;
+            Debug.LogWarning(gameObject.name + " Error. Damage resistance can't be less at 0");
+        }
+    }
 	
 	void Update ()
     {
         Movements();
         Shoot();
+        if (stats.life <= 0)
+        {
+            Destroy(gameObject);
+        }
 	}
 
     public void Movements()
@@ -72,7 +93,7 @@ public class Player : MonoBehaviour {
         {
             rigidbody2d.AddForce(Vector3.up * stats.jumpSpeed);
             canJump = false;
-            Invoke("CanJumpReseter", stats.jumpCoulDown);
+            Invoke("CanJumpReseter", stats.jumpCoolDown);
         }
     }
 
@@ -95,6 +116,11 @@ public class Player : MonoBehaviour {
                 bulletAux.GetComponent<Bullet>().direction = Bullet.Direction.Right;
             }
         }
+    }
+
+    public void SetDamage(int damage)
+    {
+        stats.life -= (damage - stats.damageResistance);
     }
 
 }
