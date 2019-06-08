@@ -6,7 +6,6 @@ public class Player : MonoBehaviour {
     [System.Serializable]
     public struct Stats
     {
-        public int life;
         public int speedMovement;
     }
 
@@ -17,8 +16,6 @@ public class Player : MonoBehaviour {
         public KeyCode downKey;
         public KeyCode leftKey;
         public KeyCode rightKey;
-        public string horizontalAxis;
-        public string verticalAxis;
     }
 
     public Controls controls;
