@@ -14,11 +14,16 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (offsetY != target.position.y - transform.position.y)
+        if (target != null)
         {
-            transform.position = new Vector3(transform.position.x, target.position.y - offsetY, transform.position.z);
-            offsetY = target.position.y - transform.position.y;
 
+
+            if (offsetY != target.position.y - transform.position.y)
+            {
+                transform.position = new Vector3(transform.position.x, target.position.y - offsetY, transform.position.z);
+                offsetY = target.position.y - transform.position.y;
+
+            }
         }
     }
 }
