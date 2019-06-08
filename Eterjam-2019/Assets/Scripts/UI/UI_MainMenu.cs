@@ -8,4 +8,9 @@ public class UI_MainMenu : MonoBehaviour {
     {
         Utilities.LoadScene(sceneName);
     }
+
+    public void Exit()
+    {
+        Utilities.ExitGame();
+    }
 }
