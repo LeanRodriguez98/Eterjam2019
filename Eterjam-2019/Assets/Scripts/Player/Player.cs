@@ -24,14 +24,14 @@ public class Player : MonoBehaviour {
     public Controls controls;
     public Stats stats;
 
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
-	void Update () {
-
+	void Update ()
+    {
         Movements();
-
 	}
 
     public void Movements()
