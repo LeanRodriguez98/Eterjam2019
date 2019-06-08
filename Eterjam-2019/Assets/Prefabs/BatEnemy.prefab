@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50105816993276328}
   m_Layer: 0
   m_Name: BatEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,9 @@ MonoBehaviour:
   LeftRightTime: 10
   UpDownTime: 0.001
   verticalSpeed: 0.05
+  enemyBullet: {fileID: 1859119636023690, guid: 8553d6764aee7e640bee2ebe0077ca0c,
+    type: 2}
+  shootDelay: 2
 --- !u!212 &212995727535612794
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,11 +8,13 @@ public class EnemyBullet : MonoBehaviour {
     public int damage;
     private Player playerReference;
     private Rigidbody2D rigidbody2d;
+    [HideInInspector] public bool shootIt = false;
     // Use this for initialization
     void Start () {
         playerReference = Player.playerInstance;
         rigidbody2d = GetComponent<Rigidbody2D>();
-        rigidbody2d.AddForce((playerReference.transform.position - transform.position + new Vector3(0,1,0)) * speed);
+        if(shootIt)
+            rigidbody2d.AddForce((playerReference.transform.position - transform.position + new Vector3(0,1,0)) * speed);
 	}
 	
 	// Update is called once per frame
@@ -28,10 +30,15 @@ public class EnemyBullet : MonoBehaviour {
 
             if (collision.gameObject == playerReference.gameObject)
             {
-                Destroy(gameObject);
                 playerReference.SetDamage(damage);
             }
         }
+        if (collision.gameObject.CompareTag("Untagged"))
+        {
+            Destroy(gameObject);
+
+        }
+
     }
 
 }

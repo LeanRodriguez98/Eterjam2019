@@ -10,10 +10,13 @@ public class BatEnemy : Enemy {
     public float UpDownTime;
     public float verticalSpeed;
 
+    public GameObject enemyBullet;
+    public float shootDelay = 2.0f;
     // Use this for initialization
     override public void Start() {
         base.Start();
         Invoke("ChangeDirection", LeftRightTime);
+        Attack();
     }
 
     // Update is called once per frame
@@ -22,7 +25,11 @@ public class BatEnemy : Enemy {
         Movement();
     }
 
-
+    public void Attack()
+    {
+        Instantiate(enemyBullet, transform.position, transform.rotation);
+        Invoke("Attack", shootDelay);
+    }
     public void Movement()
     {
         transform.position += Vector3.right * horizontalSpeed * stats.speedMovement * Time.deltaTime;
