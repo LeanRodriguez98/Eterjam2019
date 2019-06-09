@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212529232301436066}
   - component: {fileID: 61833414941164860}
   - component: {fileID: 50436720752789694}
+  - component: {fileID: 114587500802622926}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -35,8 +36,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349317905149344}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.66, y: -3.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.100649, y: -8.78, z: 0.33398563}
   m_LocalScale: {x: 0.5, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,6 +88,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114587500802622926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349317905149344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533f32d006a20134c8509f6d00f84266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleGameObject: {fileID: 1163317265092114, guid: 7e9fc20a8c4d0934f99ee86a95b969ba,
+    type: 2}
 --- !u!212 &212529232301436066
 SpriteRenderer:
   m_ObjectHideFlags: 1
