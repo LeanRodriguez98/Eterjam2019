@@ -1010,7 +1010,7 @@ Transform:
   m_GameObject: {fileID: 405346212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 12, z: 1}
+  m_LocalScale: {x: 6.4516797, y: 6.4516797, z: 0.53764}
   m_Children: []
   m_Father: {fileID: 1498697962}
   m_RootOrder: 1
@@ -1050,7 +1050,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f0eb514a2b52ce46800dd25a858b55b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8a4242979c0cb9449a94c62137ffcd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1058,7 +1058,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &430991489
@@ -1697,6 +1697,17 @@ Prefab:
         type: 2}
       propertyPath: stats.shortJumpMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212042232176775974, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71ad10b93f0bac745b0e1b6797a9e7b7,
+        type: 3}
+    - target: {fileID: 212042232176775974, guid: d263879fb831a594da35d617ec419071,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d263879fb831a594da35d617ec419071, type: 2}
