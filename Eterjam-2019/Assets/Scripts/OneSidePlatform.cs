@@ -18,7 +18,7 @@ public class OneSidePlatform : MonoBehaviour {
     {
         if (playerReference != null)
         {
-            if (playerReference.transform.position.y - (playerReference.transform.localScale.y / 2) > transform.position.y)
+            if (playerReference.transform.position.y - (playerReference.transform.localScale.y / 2) >= transform.position.y -1)
             {
                 boxCollider2D.enabled = true;
             }
