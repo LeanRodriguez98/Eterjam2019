@@ -35,8 +35,8 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public virtual void Atack(){ }
-
+    public virtual void Attack() { }
+    public virtual void Movement() { }
     public void SetDamage(int damage)
     {
         stats.life -= (damage - stats.damageResistance);

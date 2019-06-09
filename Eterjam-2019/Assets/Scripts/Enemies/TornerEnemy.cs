@@ -16,13 +16,18 @@ public class TornerEnemy : Enemy {
         base.Update();
 	}
 
-    public void Attack()
+    override public void Attack()
     {
-        if (Vector3.Distance(transform.position, playerReference.transform.position) < targerDistance)
+        if (playerReference != null)
         {
-            Instantiate(bullet, transform.position, transform.rotation).GetComponent<EnemyBullet>().shootIt = true;
+
+            if (Vector3.Distance(transform.position, playerReference.transform.position) < targerDistance)
+            {
+                Instantiate(bullet, transform.position, transform.rotation).GetComponent<EnemyBullet>().shootIt = true;
+            }
+            Invoke("Attack", shootDelay);
         }
-        Invoke("Attack", shootDelay);
+
     }
 
 }

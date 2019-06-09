@@ -12,16 +12,20 @@ public class OneSidePlatform : MonoBehaviour {
         boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.enabled = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (playerReference.transform.position.y - (playerReference.transform.localScale.y / 2) > transform.position.y)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (playerReference != null)
         {
-            boxCollider2D.enabled = true;
-        }
-        else
-        {
-            boxCollider2D.enabled = false;
+            if (playerReference.transform.position.y - (playerReference.transform.localScale.y / 2) > transform.position.y)
+            {
+                boxCollider2D.enabled = true;
+            }
+            else
+            {
+                boxCollider2D.enabled = false;
+            }
         }
     }
 }
