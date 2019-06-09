@@ -70,6 +70,7 @@ public class Player : MonoBehaviour {
         if (stats.life <= 0)
         {
             Destroy(gameObject);
+            Utilities.LoadScene("Lose");
         }
 	}
 

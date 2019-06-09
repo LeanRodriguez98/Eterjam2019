@@ -29,13 +29,36 @@ public class Boss : Enemy {
 
 	override public void Update ()
     {
-        base.Update();
         Movement();
         if (canAttack)
         {
             Attack();
         }
-	}
+
+        if (FlipX)
+        {
+            if (playerReference != null)
+            {
+
+
+                if (playerReference.transform.position.x < transform.position.x)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else
+                {
+                    spriteRenderer.flipX = false;
+                }
+            }
+        }
+
+
+        if (stats.life < 0)
+        {
+            Destroy(gameObject);
+            Utilities.LoadScene("Win");
+        }
+    }
 
  
     override public void Movement()
