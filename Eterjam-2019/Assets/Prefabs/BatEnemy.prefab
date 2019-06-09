@@ -103,6 +103,8 @@ MonoBehaviour:
     life: 50
     damageResistance: 0
     speedMovement: 1
+  spriteRenderer: {fileID: 0}
+  FlipX: 1
   horizontalSpeed: 2
   LeftRightTime: 10
   UpDownTime: 0.001

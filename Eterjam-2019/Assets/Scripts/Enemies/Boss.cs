@@ -18,12 +18,13 @@ public class Boss : Enemy {
     public float meleDistance;
     public float attackCooldown;
     public int damage;
-
+    private Rigidbody2D rigidbody2d;
     private Animator animator;
     override public void Start ()
     {
         base.Start();
         animator = GetComponent<Animator>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
 	}
 
 	override public void Update ()
@@ -36,6 +37,7 @@ public class Boss : Enemy {
         }
 	}
 
+ 
     override public void Movement()
     {
         if (playerReference != null)
