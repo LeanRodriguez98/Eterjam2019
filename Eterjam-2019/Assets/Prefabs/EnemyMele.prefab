@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114001593306108960}
   - component: {fileID: 61853158081571908}
   - component: {fileID: 50396619529384516}
+  - component: {fileID: 114317944174970800}
   m_Layer: 0
   m_Name: EnemyMele
   m_TagString: Enemy
@@ -109,6 +110,19 @@ MonoBehaviour:
   meleDistance: 1.5
   damage: 30
   attackCooldown: 1.2
+--- !u!114 &114317944174970800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236472961280812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533f32d006a20134c8509f6d00f84266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleGameObject: {fileID: 1163317265092114, guid: fe56c9edc7b4a2b44b91fb72dc29529b,
+    type: 2}
 --- !u!212 &212891818612300648
 SpriteRenderer:
   m_ObjectHideFlags: 1
