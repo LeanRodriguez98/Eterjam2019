@@ -9,7 +9,8 @@ public class Player : MonoBehaviour {
         public int life;
         public int speedMovement;
         public int jumpSpeed;
-        public float jumpCoolDown;
+        public float fallMultiplier;
+        public float shortJumpMultiplier;
         public int damageResistance;
     }
 
@@ -45,7 +46,6 @@ public class Player : MonoBehaviour {
 
 
     private Rigidbody2D rigidbody2d;
-    private bool canJump = true;
     private FacingDirection facingDirection = FacingDirection.Right;
 
     private void Awake()
@@ -89,17 +89,18 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if ((Input.GetKeyDown(controls.jump) || Input.GetButtonDown(joysticsControls.jumpButton)) && canJump)
+        if ((Input.GetKeyDown(controls.jump) || Input.GetButtonDown(joysticsControls.jumpButton)) && rigidbody2d.velocity.y == 0)
         {
-            rigidbody2d.AddForce(Vector3.up * stats.jumpSpeed);
-            canJump = false;
-            Invoke("CanJumpReseter", stats.jumpCoolDown);
+            rigidbody2d.velocity += Vector2.up * stats.jumpSpeed;
         }
-    }
 
-    public void CanJumpReseter()
-    {
-        canJump = true;
+        if (rigidbody2d.velocity.y < 0)
+            rigidbody2d.velocity += Vector2.up * Physics2D.gravity.y * (stats.fallMultiplier - 1) * Time.deltaTime;
+        else if (rigidbody2d.velocity.y > 0 && !Input.GetKey(controls.jump))
+            rigidbody2d.velocity += Vector2.up * Physics2D.gravity.y * (stats.shortJumpMultiplier - 1) * Time.deltaTime;
+
+        if (rigidbody2d.velocity.y > 0 && !Input.GetButton(joysticsControls.jumpButton))
+            rigidbody2d.velocity += Vector2.up * Physics2D.gravity.y * (stats.shortJumpMultiplier - 1) * Time.deltaTime;
     }
 
     public void Shoot()
