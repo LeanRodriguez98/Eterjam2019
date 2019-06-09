@@ -42,6 +42,9 @@ public class Player : MonoBehaviour {
     public GameObject bullet;
 
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     public static Player playerInstance;
 
 
@@ -61,6 +64,7 @@ public class Player : MonoBehaviour {
             stats.damageResistance = 0;
             Debug.LogWarning(gameObject.name + " Error. Damage resistance can't be less at 0");
         }
+        audioSource = GetComponent<AudioSource>();
     }
 	
 	void Update ()
@@ -120,6 +124,7 @@ public class Player : MonoBehaviour {
             {
                 bulletAux.GetComponent<Bullet>().direction = Bullet.Direction.Right;
             }
+            audioSource.Play();
         }
     }
 
