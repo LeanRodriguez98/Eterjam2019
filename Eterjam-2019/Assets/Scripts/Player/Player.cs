@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
 
     private Rigidbody2D rigidbody2d;
     private FacingDirection facingDirection = FacingDirection.Right;
-
+    private SpriteRenderer spriteRenderer;
     private void Awake()
     {
         playerInstance = this;
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
         if (stats.damageResistance < 0)
         {
             stats.damageResistance = 0;
@@ -82,10 +82,13 @@ public class Player : MonoBehaviour {
             if (Input.GetAxis(controls.horizontalAxis) < 0 || Input.GetAxis(joysticsControls.horizontalAxis) < 0)
             {
                 facingDirection = FacingDirection.Left;
+                spriteRenderer.flipX = true;
             }
             else
             {
                 facingDirection = FacingDirection.Right;
+                spriteRenderer.flipX = false;
+
             }
         }
 
