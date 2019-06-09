@@ -15,7 +15,8 @@ public class UI_Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (player.enabled && slider.enabled)
-            slider.value = player.stats.life;
+        if(player != null && slider != null)
+            if (player.enabled && slider.enabled)
+                slider.value = player.stats.life;
 	}
 }

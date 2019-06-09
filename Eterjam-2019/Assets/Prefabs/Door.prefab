@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533f32d006a20134c8509f6d00f84266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleGameObject: {fileID: 1163317265092114, guid: 7e9fc20a8c4d0934f99ee86a95b969ba,
+  particleGameObject: {fileID: 1163317265092114, guid: dd8073e9a540add49b86c995a7971b69,
     type: 2}
 --- !u!212 &212529232301436066
 SpriteRenderer:
