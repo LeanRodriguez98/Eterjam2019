@@ -1182,6 +1182,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToTeleport: {fileID: 273116588}
   teleportPosition: {fileID: 1370922787}
+  audioClip: {fileID: 8300000, guid: 7d32d485672177b4b929a5f273c72e7b, type: 3}
+  AudioSource: {fileID: 1973674497}
+  changeMusic: 0
 --- !u!4 &387049244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4283023343523718, guid: 215006600d542e24fbac490777a0c27c,
@@ -3392,6 +3395,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToTeleport: {fileID: 273116588}
   teleportPosition: {fileID: 262747795}
+  audioClip: {fileID: 0}
+  AudioSource: {fileID: 0}
+  changeMusic: 0
 --- !u!1001 &973710669
 Prefab:
   m_ObjectHideFlags: 0
@@ -3628,6 +3634,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToTeleport: {fileID: 273116588}
   teleportPosition: {fileID: 652938840}
+  audioClip: {fileID: 0}
+  AudioSource: {fileID: 0}
+  changeMusic: 0
 --- !u!1 &1097892029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,6 +4009,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToTeleport: {fileID: 273116588}
   teleportPosition: {fileID: 1418512838}
+  audioClip: {fileID: 0}
+  AudioSource: {fileID: 0}
+  changeMusic: 0
 --- !u!4 &1277483085
 Transform:
   m_ObjectHideFlags: 0
@@ -4482,6 +4494,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToTeleport: {fileID: 273116588}
   teleportPosition: {fileID: 939583491}
+  audioClip: {fileID: 0}
+  AudioSource: {fileID: 0}
+  changeMusic: 0
 --- !u!4 &1526849766
 Transform:
   m_ObjectHideFlags: 0
