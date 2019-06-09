@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour {
         public float speedMovement;
     }
 
+    public AudioClip audioClip;
+    private AudioSource audioSource;
+
     public Stats stats;
 
     protected Player playerReference;
@@ -27,7 +30,8 @@ public class Enemy : MonoBehaviour {
         }
 
         playerReference = Player.playerInstance;
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClip;
     }
 
     public virtual void Update()
@@ -56,7 +60,10 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public virtual void Attack() { }
+    public virtual void Attack()
+    {
+        audioSource.Play();
+    }
     public virtual void Movement() { }
     public void SetDamage(int damage)
     {
