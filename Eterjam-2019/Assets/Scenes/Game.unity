@@ -3006,7 +3006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7e64862e2fdb4b80c6516826ecb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 1236472961280812, guid: defa7ccd173d9a54ea7d70a7cd0bf0b2,
+  enemyToSpawn: {fileID: 1236472961280812, guid: ef63c167f6dcf4f42b1267b712b20034,
     type: 2}
   positionsToSpawnEnemies:
   - {fileID: 1722227189}
