@@ -25,12 +25,12 @@ public class BatEnemy : Enemy {
         Movement();
     }
 
-    public void Attack()
+    override public void Attack()
     {
         Instantiate(enemyBullet, transform.position, transform.rotation);
         Invoke("Attack", shootDelay);
     }
-    public void Movement()
+    override public void Movement()
     {
         transform.position += Vector3.right * horizontalSpeed * stats.speedMovement * Time.deltaTime;
         transform.position += Vector3.up * verticalSpeed * stats.speedMovement * Mathf.Sin(Time.timeSinceLevelLoad);

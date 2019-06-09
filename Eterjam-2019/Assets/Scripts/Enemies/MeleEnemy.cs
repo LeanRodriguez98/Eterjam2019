@@ -21,7 +21,7 @@ public class MeleEnemy : Enemy {
         Movement();
 	}
 
-    public void Movement()
+     override public void Movement()
     {
         if (playerReference != null)
         {
@@ -31,7 +31,7 @@ public class MeleEnemy : Enemy {
                     {
                         if (canAttack)
                         {
-                            Atack();
+                            Attack();
                             canAttack = false;
                             Invoke("CanAttackReseter", attackCooldown);
                         }
@@ -56,7 +56,7 @@ public class MeleEnemy : Enemy {
         canAttack = true;
     }
 
-    public override void Atack()
+    public override void Attack()
     {
         playerReference.SetDamage(damage);
     }
