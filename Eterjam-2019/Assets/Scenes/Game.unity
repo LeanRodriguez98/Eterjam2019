@@ -1165,6 +1165,8 @@ GameObject:
   m_Component:
   - component: {fileID: 492569686}
   - component: {fileID: 492569687}
+  - component: {fileID: 492569689}
+  - component: {fileID: 492569688}
   m_Layer: 10
   m_Name: Arm
   m_TagString: Untagged
@@ -1179,8 +1181,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492569685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5760002, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.9, z: 1}
+  m_LocalPosition: {x: 0, y: 0.487, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.72269994, z: 1}
   m_Children: []
   m_Father: {fileID: 101156041}
   m_RootOrder: 0
@@ -1231,6 +1233,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &492569688
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 492569685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.33466658}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.33066684}
+  m_EdgeRadius: 0
+--- !u!114 &492569689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 492569685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ce17868a05d2347841ad7fd8ef04dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,7 +1579,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4967999212745232, guid: d263879fb831a594da35d617ec419071, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 92.3
       objectReference: {fileID: 0}
     - target: {fileID: 4967999212745232, guid: d263879fb831a594da35d617ec419071, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1583,7 +1621,7 @@ Prefab:
     - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
         type: 2}
       propertyPath: stats.life
-      value: 10000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114557519933993548, guid: d263879fb831a594da35d617ec419071,
         type: 2}
@@ -3423,7 +3461,7 @@ MonoBehaviour:
   targetDistance: 25
   meleDistance: 2
   attackCooldown: 0
-  damage: 0
+  damage: 25
 --- !u!95 &1498697964
 Animator:
   serializedVersion: 3
