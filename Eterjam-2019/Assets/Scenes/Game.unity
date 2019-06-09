@@ -3837,6 +3837,7 @@ MonoBehaviour:
     life: 800
     damageResistance: 10
     speedMovement: 3.5
+  spriteRenderer: {fileID: 405346214}
   pivotArm: {fileID: 101156040}
   targetDistance: 25
   meleDistance: 2

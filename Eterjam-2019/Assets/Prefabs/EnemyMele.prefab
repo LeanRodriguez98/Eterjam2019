@@ -103,6 +103,8 @@ MonoBehaviour:
     life: 100
     damageResistance: 5
     speedMovement: 4.5
+  spriteRenderer: {fileID: 212891818612300648}
+  FlipX: 1
   targetDistance: 10
   meleDistance: 1.5
   damage: 30

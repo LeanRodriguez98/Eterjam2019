@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour {
 
     protected Player playerReference;
 
+    public SpriteRenderer spriteRenderer;
+    public bool FlipX = false;
     public virtual void Start()
     {
         if (stats.damageResistance < 0)
@@ -25,10 +27,29 @@ public class Enemy : MonoBehaviour {
         }
 
         playerReference = Player.playerInstance;
+        
     }
 
     public virtual void Update()
     {
+        if (FlipX)
+        {
+            if (playerReference != null)
+            {
+
+
+                if (playerReference.transform.position.x < transform.position.x)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else
+                {
+                    spriteRenderer.flipX = false;
+                }
+            }
+        }
+
+
         if (stats.life < 0)
         {
             Destroy(gameObject);
